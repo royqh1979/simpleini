@@ -2153,6 +2153,10 @@ CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetValue(
         }
     }
 
+    // check if value of the entries is an empty string
+    if (*(iKeyVal->second)==0)
+        return a_pDefault;
+
     return iKeyVal->second;
 }
 
